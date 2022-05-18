@@ -1,0 +1,74 @@
+html {
+    background: url("https://www.hdcarwallpapers.com/walls/2023_chevrolet_corvette_z06_z07_performance_package_4k_8k_2-HD.jpg") no-repeat, #696e7a;
+    background-size: cover;
+}
+
+.site-title {
+    border-radius: 25px;
+    background-color: #696e7a;
+    color: white;
+}
+
+.calc {
+    float: right;
+}
+
+.calculator {
+    padding: 15px;
+    border-radius: 2em;
+    height: 275px;
+    width: 250px;
+    margin: auto;
+    background-color: #a3a4af;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.display-box {
+    font-family: 'Times New Roman', sans-serif;
+    font-size: large;
+    background-color: #dcdbe1;
+    border: solid black 0.5px;
+    color: black;
+    border-radius: 5px;
+    width: 100%;
+    height: 65%;
+}
+
+.button {
+    font-family: 'Times New Roman', sans-serif;
+    background-color: #000000;
+    color: white;
+    border: solid black 0.5px;
+    width: 100%;
+    border-radius: 5px;
+    height: 70%;
+    outline: none;
+
+}
+
+.button:hover {
+    border: 1px solid rgb(204, 204, 204);
+    background-color: #4b4b4b;
+}
+
+.button:active {
+    background: #bebebe;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+}
+
+.scansimage {
+    font-family: 'Times New Roman', sans-serif;
+    color: white;
+    float: left;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+img {
+    display: none;
+}
+
+.scansimage:hover img {
+    display: flex
+}

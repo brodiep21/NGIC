@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <div class="container container-flex" style="text-align:center">
+        <div style="color:rgb(255, 255, 255);" font color="black" class="site-title">
+            <h1>NGIC</h1>
+        </div>
+        <nav>
+            <ul style="text-align:left">
+                <li><a href="index.html" class="current-page">Home</a></li>
+                <li><a href="about-me.html">About me</a></li>
+                <li><a href="recent-posts.html">Recent posts</a></li>
+            </ul>
+        </nav>
+    </div> <!-- / .container -->
+</header>
+
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body {
+            background-image: url("https://www.hdcarwallpapers.com/walls/2023_chevrolet_corvette_z06_z07_performance_package_4k_8k_2-HD.jpg");
+            background-size: cover;
+            position: absolute;
+            overflow: visible;
+            background-repeat: no-repeat;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="scansimage">
+        Hover here for Scan info
+        <img src="positionstatement.PNG" alt="scans">
+    </div>
+    </div>
+    <div class="calc">
+        <table class="calculator">
+            <tr>
+                <td colspan="3"> <input class="display-box" name="display" type="text" id="result" disabled /> </td>
+                <td> <input class="button" name="clear" type="button" value="C" onclick="clearDisplay()"
+                        style="background-color: #c75905;" />
+                </td>
+            </tr>
+            <tr>
+                <td> <input class="button" name="number" type="button" value="1" onclick="display('1')" /> </td>
+                <td> <input class="button" name="number" type="button" value="2" onclick="display('2')" /> </td>
+                <td> <input class="button" name="number" type="button" value="3" onclick="display('3')" /> </td>
+                <td> <input class="button" type="button" value="/" onclick="display('/')" /> </td>
+            </tr>
+            <tr>
+                <td> <input class="button" name="number" type="button" value="4" onclick="display('4')" /> </td>
+                <td> <input class="button" name="number" type="button" value="5" onclick="display('5')" /> </td>
+                <td> <input class="button" name="number" type="button" value="6" onclick="display('6')" /> </td>
+                <td> <input class="button" name="symbol" type="button" value="-" onclick="display('-')" /> </td>
+            </tr>
+            <tr>
+                <td> <input class="button" name="number" type="button" value="7" onclick="display('7')" /> </td>
+                <td> <input class="button" name="number" type="button" value="8" onclick="display('8')" /> </td>
+                <td> <input class="button" name="number" type="button" value="9" onclick="display('9')" /> </td>
+                <td> <input class="button" name="symbol" type="button" value="+" onclick="display('+')" /> </td>
+            </tr>
+            <tr>
+                <td> <input class="button" name="number" type="button" value="." onclick="display('.')" /> </td>
+                <td> <input class="button" name="number" type="button" value="0" onclick="display('0')" /> </td>
+                <td> <input class="button" name="symbol" type="button" value="=" onclick="calculate()"
+                        style="background-color: #c75905;" /> </td>
+                <td> <input class="button" name="symbol" type="button" value="*" onclick="display('*')" /> </td>
+            </tr>
+        </table>
+
+</body>
+<script type="text/javascript" src="calc.js"></script>
+
+</html>
