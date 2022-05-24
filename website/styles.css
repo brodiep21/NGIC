@@ -70,5 +70,13 @@ img {
 }
 
 .scansimage:hover img {
-    display: flex
+    display: flex;
+    overflow-y: scroll;
+    height: 500px;
+    width: 400px;
+}
+
+ul.navbar-items li /* Important part */
+{
+    display:inline;
 }
