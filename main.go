@@ -33,8 +33,8 @@ func main() {
 	}
 	fmt.Printf("Starting server at %s", port)
 
-	http.HandleFunc("/", homePage)
-	http.HandleFunc("/weather", HTMLresponse)
+	http.HandleFunc()
+	http.HandleFunc()
 	http.ListenAndServe(":"+port, nil)
 
 }
