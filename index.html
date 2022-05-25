@@ -13,11 +13,11 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about-me.html">Help Files</a></li>
                 <li><div class="container">
-                    <form method="POST">
+                    <form action="?" method="POST">
                         <input type="text" name="tax" style="text-align:center; height: 25px; width: 200px;"
                         placeholder="Search For a city or zip code" autoFocus, autocomplete>
-                        <h1 name="tax">{{.Tax.Rate}}</h1>
                     </form>
+                    <h1>{{t.Rate}}</h1>
                     </div></li>
                     </div>
             </ul>
@@ -40,7 +40,7 @@
 <body>
     <div class="scansimage">
         Hover here for Scan info
-        <img src="positionstatement.PNG" alt="scans">
+        <img src="assets/positionstatement.PNG" alt="scans">
 
 </div>
     <div class="calc">
@@ -79,6 +79,6 @@
         </table>
 
 </body>
-<script type="text/javascript" src="calc.js"></script>
+<script type="text/javascript" src="assets/calc.js"></script>
 
 </html>

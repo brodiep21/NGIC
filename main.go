@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"errors"
 	"fmt"
 	"html/template"
 	"log"
@@ -13,7 +12,7 @@ import (
 	googlesearch "github.com/rocketlaunchr/google-search"
 )
 
-var Tax struct {
+type Tax struct {
 	Rate string
 }
 
@@ -27,12 +26,16 @@ func LandingPage(w http.ResponseWriter, r *http.Request) {
 	templ.ExecuteTemplate(w, "index.html", nil)
 }
 
-func SearchTax(w http.ResponseWriter, r *http.Request) (string, error) {
+var t Tax
+
+func SearchTax(w http.ResponseWriter, r *http.Request) {
 
 	response := r.FormValue("tax")
+
+	fmt.Println(response)
 	if r.Method != "POST" {
 		http.Redirect(w, r, "/", http.StatusSeeOther)
-		return "", errors.New("Could not respond to form method " + r.Method)
+		return
 	}
 
 	search, err := googlesearch.Search(context.TODO(), "tax rate of "+response)
@@ -46,32 +49,31 @@ func SearchTax(w http.ResponseWriter, r *http.Request) (string, error) {
 			if pos == -1 {
 				fmt.Println("Could not locate tax")
 			}
-			Tax.Rate = v.Description[(pos - 5):pos]
+			t.Rate = v.Description[(pos - 5):pos]
 			break
 		}
 
 	}
-	return Tax.Rate, nil
+	templ.ExecuteTemplate(w, "index.html", t.Rate)
 }
 
 func main() {
 
-	ch := make(chan string)
-
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8080"
+		port = "8082"
 		log.Printf("Setting default port to %s", port)
 	}
 
 	http.HandleFunc("/", LandingPage)
+	http.HandleFunc("?", SearchTax)
 
-	defer close(ch)
-	ch <- Tax.Rate
+	// http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
 
-	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
+	fs := http.FileServer(http.Dir("assets/"))
+	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
 	http.ListenAndServe(":"+port, nil)
-	fmt.Printf("Starting server at %s", port)
+	fmt.Printf("Starting server at %s\n", port)
 
 }
 
