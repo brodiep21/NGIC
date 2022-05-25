@@ -1,13 +1,14 @@
 html {
     background: url("https://www.hdcarwallpapers.com/walls/2023_chevrolet_corvette_z06_z07_performance_package_4k_8k_2-HD.jpg") no-repeat, #696e7a;
     background-size: cover;
+    background-attachment: fixed;
 }
 
-.site-title {
-    border-radius: 25px;
+/* .site-title {
+    border-radius:
     background-color: #696e7a;
     color: white;
-}
+} */
 
 .calc {
     float: right;
@@ -19,7 +20,7 @@ html {
     height: 275px;
     width: 250px;
     margin: auto;
-    background-color: #a3a4af;
+    background-color: #424242;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
@@ -36,7 +37,7 @@ html {
 
 .button {
     font-family: 'Times New Roman', sans-serif;
-    background-color: #000000;
+    background-color: #000000b7;
     color: white;
     border: solid black 0.5px;
     width: 100%;
@@ -63,6 +64,7 @@ html {
     color: white;
     float: left;
     background-color: rgba(255, 255, 255, 0);
+    align-content:"right"
 }
 
 img {
@@ -70,13 +72,11 @@ img {
 }
 
 .scansimage:hover img {
-    display: flex;
+    display:flow-root;
     overflow-y: scroll;
-    height: 500px;
-    width: 400px;
 }
 
 ul.navbar-items li /* Important part */
 {
-    display:inline;
+    display:block
 }

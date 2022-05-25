@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <header>
+    <link rel="stylesheet" href="assets/styles.css">
     <div class="container container-flex" style="text-align:center">
         <div style="color:rgb(255, 255, 255);" font color="black" class="site-title">
             <h1>NGIC</h1>
         </div>
-        <nav>
-            <ul class="navbar-items">
-                <li><a href="index.html" class="current-page">Home</a></li>
-                <li><a href="about-me.html">About me</a></li>
-                <li><div style="align-content:center" class="container">
+        <div>
+            <br>
+            <nav>
+             <ul class="navbar-items"align-content="center">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about-me.html">Help Files</a></li>
+                <li><div class="container">
+                    <form method="POST">
                         <input type="text" name="tax" style="text-align:center; height: 25px; width: 200px;"
-                        placeholder="Search For a city or zip code" autoFocus, autocomplete><br><br>
+                        placeholder="Search For a city or zip code" autoFocus, autocomplete>
+                        <h1 name="tax">{{.Tax.Rate}}</h1>
+                    </form>
                     </div></li>
-                
+                    </div>
             </ul>
-        </nav>
+    
+            </nav>
+        </div>
     </div> <!-- / .container -->
 </header>
 
 
 <head>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/styles.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* body {
-            background-image: url("https://www.hdcarwallpapers.com/walls/2023_chevrolet_corvette_z06_z07_performance_package_4k_8k_2-HD.jpg");
-            background-size: cover;
-            position: absolute;
-            overflow: visible;
-            background-repeat: no-repeat;
-        } */
     </style>
 </head>
 
@@ -40,8 +41,8 @@
     <div class="scansimage">
         Hover here for Scan info
         <img src="positionstatement.PNG" alt="scans">
-    </div>
-    </div>
+
+</div>
     <div class="calc">
         <table class="calculator">
             <tr>
