@@ -12,10 +12,6 @@ import (
 	googlesearch "github.com/rocketlaunchr/google-search"
 )
 
-type Tax struct {
-	Rate string
-}
-
 var templ *template.Template
 
 func init() {
@@ -26,7 +22,7 @@ func LandingPage(w http.ResponseWriter, r *http.Request) {
 	templ.ExecuteTemplate(w, "index.html", nil)
 }
 
-var t Tax
+var Tax string
 
 func SearchTax(w http.ResponseWriter, r *http.Request) {
 
@@ -42,36 +38,39 @@ func SearchTax(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println(search)
 
 	for _, v := range search {
 		if strings.Contains(v.Description, "%") {
 			pos := strings.Index(v.Description, "%")
 			if pos == -1 {
-				fmt.Println("Could not locate tax")
+				fmt.Println("Could not locate Tax")
 			}
-			t.Rate = v.Description[(pos - 5):pos]
+			Tax = v.Description[(pos - 5) : pos+1]
+			Tax = strings.TrimPrefix(Tax, "is ")
+			Tax = strings.TrimPrefix(Tax, " ")
+			fmt.Println(Tax)
 			break
 		}
-
 	}
-	templ.ExecuteTemplate(w, "index.html", t.Rate)
+	LandingPage(w, r)
 }
 
 func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8082"
+		port = "8080"
 		log.Printf("Setting default port to %s", port)
 	}
 
 	http.HandleFunc("/", LandingPage)
-	http.HandleFunc("?", SearchTax)
-
-	// http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
+	http.HandleFunc("/test", SearchTax)
+	fmt.Println(Tax)
 
 	fs := http.FileServer(http.Dir("assets/"))
 	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
+	http.Handle("/test/assets/", http.StripPrefix("/test/assets/", fs))
 	http.ListenAndServe(":"+port, nil)
 	fmt.Printf("Starting server at %s\n", port)
 
