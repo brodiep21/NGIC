@@ -76,9 +76,10 @@ func searchForTaxRate(zipCode string) (string, error) {
 			if pos == -1 {
 				break
 			}
-			tax := v.Description[(pos - 5) : pos+1]
+			tax := v.Description[(pos - 6) : pos+1]
 			tax = strings.TrimPrefix(tax, "is ")
 			tax = strings.TrimPrefix(tax, " ")
+			tax = strings.TrimPrefix(tax, "s")
 			return tax, nil
 		}
 	}
