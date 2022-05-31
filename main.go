@@ -28,6 +28,7 @@ func main() {
 	}
 
 	http.HandleFunc("/", theOneHandler)
+	// http.HandleFunc("/help", theOneHandler)
 	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets/"))))
 
 	http.ListenAndServe(":"+port, nil)

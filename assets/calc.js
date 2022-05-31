@@ -13,3 +13,14 @@ function calculate() {
     var q = eval(p);
     document.getElementById("result").value = q;
 }
+
+
+function saveInfo() {
+    var x = document.getElementById('textarea').value
+    sessionStorage.setItem("textarea", x)
+}
+
+function pasteInfo(){
+    var x = sessionStorage.getItem("textarea");
+    document.GetElementById("textarea").innerHTML = x;
+}

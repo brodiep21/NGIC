@@ -11,11 +11,11 @@ html {
 } */
 
 .calc {
-    float: right;
+    float: left;
 }
 
 .calculator {
-    padding: 15px;
+    /* padding: 15px; */
     border-radius: 2em;
     height: 275px;
     width: 250px;
@@ -59,7 +59,7 @@ html {
     box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
-.scansimage {
+/* .scansimage {
     font-family: 'Times New Roman', sans-serif;
     color: white;
     float: left;
@@ -74,9 +74,17 @@ img {
 .scansimage:hover img {
     display:flow-root;
     overflow-y: scroll;
-}
+} */
 
-ul.navbar-items li /* Important part */
+.navbar-items /* Important part */
 {
-    display:block
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+ul.navbar-items {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
