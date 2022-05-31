@@ -59,23 +59,6 @@ html {
     box-shadow: inset 0px 0px 5px #c1c1c1;
 }
 
-/* .scansimage {
-    font-family: 'Times New Roman', sans-serif;
-    color: white;
-    float: left;
-    background-color: rgba(255, 255, 255, 0);
-    align-content:"right"
-}
-
-img {
-    display: none;
-}
-
-.scansimage:hover img {
-    display:flow-root;
-    overflow-y: scroll;
-} */
-
 .navbar-items /* Important part */
 {
     padding: 8px 15px;
@@ -87,4 +70,8 @@ img {
 ul.navbar-items {
     margin-top: 0;
     margin-bottom: 10px;
+}
+
+.editor {
+    height: 600
 }
