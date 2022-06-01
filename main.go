@@ -23,7 +23,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8080"
+		port = "8082"
 		log.Printf("Setting default port to %s", port)
 	}
 
@@ -79,8 +79,11 @@ func searchForTaxRate(zipCode string) (string, error) {
 			}
 			tax := v.Description[(pos - 6) : pos+1]
 			tax = strings.TrimPrefix(tax, "is ")
+			tax = strings.TrimPrefix(tax, " is ")
+			tax = strings.TrimPrefix(tax, "is")
 			tax = strings.TrimPrefix(tax, " ")
 			tax = strings.TrimPrefix(tax, "s")
+			tax = strings.TrimPrefix(tax, "a")
 			return tax, nil
 		}
 	}

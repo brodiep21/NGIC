@@ -2,73 +2,43 @@
 <html lang="en">
 <header>
     <link rel="stylesheet" href="assets/styles.css">
-    <div class="container container-flex" style="text-align:center">
+    <div style="text-align:center">
         <div style="color:rgb(255, 255, 255);" font color="black" class="site-title">
             <h1>NGIC</h1>
         </div>
     </div>
-            <nav>
+            <div class="nav">
             <ul class="navbar-items">
-                <li><a href="">Home</a></li>
+                <!-- <li><a href="">Home</a></li> -->
                 <!-- <form action="/help" method="POST"> -->
-                <li><a href="">Help Files</a></li>
-                <!-- </form> -->
-                <li><div class="container">
-                    <form action="/" method="POST">
-                        <input type="text" name="tax" style="text-align:center; height: 25px; width: 200px;"
+                <!-- <li><a href="">Help Files</a></li> -->
+                <li><form action="/" method="POST">
+                    <input type="text" name="tax" style="text-align:center; height: 25px; width: 200px;"
                         placeholder="Search a zip code, City, or City/State" autoFocus, autocomplete>
-                    </form>
-                <h1>{{ .Tax }}</h1>
-                    </div></li>
-
+                </form></li>
             </ul>
-    
-            </nav>
+                <!-- <div class="container">
+                    
+                </div> -->
+                <div class="tax">
+                {{ .Tax }}
+                </div>
+            </div>
 </header>
 
 
 
 <body>
-    <div class="calc">
-        <table class="calculator">
-            <tr>
-                <td colspan="3"> <input class="display-box" name="display" type="text" id="result" disabled /> </td>
-                <td> <input class="button" name="clear" type="button" value="C" onclick="clearDisplay()"
-                        style="background-color: #c75905;" />
-                </td>
-            </tr>
-            <tr>
-                <td> <input class="button" name="number" type="button" value="1" onclick="display('1')" /> </td>
-                <td> <input class="button" name="number" type="button" value="2" onclick="display('2')" /> </td>
-                <td> <input class="button" name="number" type="button" value="3" onclick="display('3')" /> </td>
-                <td> <input class="button" type="button" value="/" onclick="display('/')" /> </td>
-            </tr>
-            <tr>
-                <td> <input class="button" name="number" type="button" value="4" onclick="display('4')" /> </td>
-                <td> <input class="button" name="number" type="button" value="5" onclick="display('5')" /> </td>
-                <td> <input class="button" name="number" type="button" value="6" onclick="display('6')" /> </td>
-                <td> <input class="button" name="symbol" type="button" value="-" onclick="display('-')" /> </td>
-            </tr>
-            <tr>
-                <td> <input class="button" name="number" type="button" value="7" onclick="display('7')" /> </td>
-                <td> <input class="button" name="number" type="button" value="8" onclick="display('8')" /> </td>
-                <td> <input class="button" name="number" type="button" value="9" onclick="display('9')" /> </td>
-                <td> <input class="button" name="symbol" type="button" value="+" onclick="display('+')" /> </td>
-            </tr>
-            <tr>
-                <td> <input class="button" name="number" type="button" value="." onclick="display('.')" /> </td>
-                <td> <input class="button" name="number" type="button" value="0" onclick="display('0')" /> </td>
-                <td> <input class="button" name="symbol" type="button" value="=" onclick="calculate()"
-                        style="background-color: #c75905;" /> </td>
-                <td> <input class="button" name="symbol" type="button" value="*" onclick="display('*')" /> </td>
-            </tr>
-        </table>
-    </div>
-<br>
-    <iframe width="800" height="800" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=3FE06906F7314EDF%217415&authkey=%21AO77Q7c385m9_d4&em=2&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edesNext=false&ejss=false"></iframe>
-    <!-- <button align-content="top" onclick="saveInfo()">Save current information</button>
-        <button align-content="top" onclick="pasteInfo()">Set info</button>"
-        <textarea id="texta" name="textarea" rows="40" cols="60">NEST MCP 
+
+   <!-- <div id ="outer">
+    <button class="inner" align-content="top" onclick="saveInfo()">Save current information</button>
+    <button class="inner" align-content="top" onclick="pasteInfo()">Set info</button>
+   </div> -->
+
+    <div class="main-content">
+    <iframe width="800" height="606" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=3FE06906F7314EDF%217415&authkey=%21AO77Q7c385m9_d4&em=2&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True&edesNext=false&ejss=false"></iframe>
+    
+    <textarea id="texta" class="textarea" name="textarea" height="610" rows="40" cols="60">NEST MCP 
 IV – 		
             
 PD Coverage – k limits
@@ -91,12 +61,58 @@ Parts Searched – YES
 Closing
 Estimate emailed to owner
 NEST file complete
-            </textarea> -->
+            </textarea>
+            <div class="calc">
+                <table class="calculator">
+                    <tr>
+                        <td colspan="3"> <input class="display-box" name="display" type="text" id="result" disabled /> </td>
+                        <td> <input class="button" name="clear" type="button" value="C" onclick="clearDisplay()"
+                                style="background-color: #c75905;" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <input class="button" name="number" type="button" value="1" onclick="display('1')" /> </td>
+                        <td> <input class="button" name="number" type="button" value="2" onclick="display('2')" /> </td>
+                        <td> <input class="button" name="number" type="button" value="3" onclick="display('3')" /> </td>
+                        <td> <input class="button" type="button" value="/" onclick="display('/')" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <input class="button" name="number" type="button" value="4" onclick="display('4')" /> </td>
+                        <td> <input class="button" name="number" type="button" value="5" onclick="display('5')" /> </td>
+                        <td> <input class="button" name="number" type="button" value="6" onclick="display('6')" /> </td>
+                        <td> <input class="button" name="symbol" type="button" value="-" onclick="display('-')" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <input class="button" name="number" type="button" value="7" onclick="display('7')" /> </td>
+                        <td> <input class="button" name="number" type="button" value="8" onclick="display('8')" /> </td>
+                        <td> <input class="button" name="number" type="button" value="9" onclick="display('9')" /> </td>
+                        <td> <input class="button" name="symbol" type="button" value="+" onclick="display('+')" /> </td>
+                    </tr>
+                    <tr>
+                        <td> <input class="button" name="number" type="button" value="." onclick="display('.')" /> </td>
+                        <td> <input class="button" name="number" type="button" value="0" onclick="display('0')" /> </td>
+                        <td> <input class="button" name="symbol" type="button" value="=" onclick="calculate()"
+                                style="background-color: #c75905;" /> </td>
+                        <td> <input class="button" name="symbol" type="button" value="*" onclick="display('*')" /> </td>
+                    </tr>
+                </table>
+            </div>
     </div>
+ 
     
        
 </body>
 
 <script type="text/javascript" src="assets/calc.js"></script>
+<script>
+function saveInfo() {
+    var v = document.getElementById("texta").value;
+    sessionStorage.setItem("text", v)
+}
+function pasteInfo() {
+    var x = sessionStorage.getItem("texta").value
+    document.getElementById("texta").value = x
+}
+</script>
 
 </html>
