@@ -8,6 +8,8 @@ WORKDIR /NGIC
 
 COPY go.mod .
 
+COPY go.sum .
+
 COPY assets/calc.js .
 
 COPY assets/styles.css .
