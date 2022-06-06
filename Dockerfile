@@ -6,25 +6,27 @@ LABEL maintainer "Brodie <brodiep21@hotmail.com>"
 
 WORKDIR /NGIC
 
-# COPY go.mod .
+COPY index.html .
 
-# COPY go.sum .
+COPY main.go .
 
-# COPY assets/calc.js .
+COPY go.mod .
 
-# COPY assets/styles.css .
+COPY go.sum .
 
-COPY . .
+RUN mkdir assets
 
-# COPY index.html .
+COPY assets/calc.js assets/
 
-# COPY main.go .
+COPY assets/styles.css assets/
 
 ENV PORT 8080
 
 # RUN apk add --no-cache go
 
 # RUN go version
+
+# RUN go get github.com/rocketlaunchr/google-search
 
 RUN go build
 
