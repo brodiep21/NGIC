@@ -6,17 +6,19 @@ LABEL maintainer "Brodie <brodiep21@hotmail.com>"
 
 WORKDIR /NGIC
 
-COPY go.mod .
+# COPY go.mod .
 
-COPY go.sum .
+# COPY go.sum .
 
-COPY assets/calc.js .
+# COPY assets/calc.js .
 
-COPY assets/styles.css .
+# COPY assets/styles.css .
 
-COPY index.html .
+COPY . .
 
-COPY main.go .
+# COPY index.html .
+
+# COPY main.go .
 
 ENV PORT 8080
 
